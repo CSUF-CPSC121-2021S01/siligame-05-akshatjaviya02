@@ -1,0 +1,27 @@
+[
+ {
+ "directory" : "/home/student/CPSC 121/siligame-05-akshatjaviya02",
+ "command" : "clang++ -std=c++17 main.cc -o main",
+ "file" : "/home/student/CPSC 121/siligame-05-akshatjaviya02/main.cc"
+ },
+ {
+ "directory" : "/home/student/CPSC 121/siligame-05-akshatjaviya02",
+ "command" : "clang++ -std=c++17 player.cc -o main",
+ "file" : "/home/student/CPSC 121/siligame-05-akshatjaviya02/player.cc"
+ },
+ {
+ "directory" : "/home/student/CPSC 121/siligame-05-akshatjaviya02",
+ "command" : "clang++ -std=c++17 opponent.cc -o main",
+ "file" : "/home/student/CPSC 121/siligame-05-akshatjaviya02/opponent.cc"
+ },
+ {
+ "directory" : "/home/student/CPSC 121/siligame-05-akshatjaviya02",
+ "command" : "clang++ -std=c++17 game_element.cc -o main",
+ "file" : "/home/student/CPSC 121/siligame-05-akshatjaviya02/game_element.cc"
+ },
+ {
+ "directory" : "/home/student/CPSC 121/siligame-05-akshatjaviya02",
+ "command" : "clang++ -std=c++17 game.cc -o main",
+ "file" : "/home/student/CPSC 121/siligame-05-akshatjaviya02/game.cc"
+ },
+]
