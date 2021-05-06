@@ -71,11 +71,11 @@ void Game::FilterIntersections() {
     }
   }
   // Bullet and UFO
-  for (int p = 0; p < player_pro.size(); p++) {
-    for (int k = 0; k < opponent_.size(); k++) {
-      if (player_pro[p]->IntersectsWith(opponent_[k].get()) == true) {
-        player_pro[p]->SetIsActive(false);
-        opponent_[k]->SetIsActive(false);
+  for (int a = 0; a < player_pro.size(); a++) {
+    for (int b = 0; b < opponent_.size(); b++) {
+      if (player_pro[a]->IntersectsWith(opponent_[b].get()) == true) {
+        player_pro[a]->SetIsActive(false);
+        opponent_[b]->SetIsActive(false);
         if (player_.GetIsActive() == true) {
           game_score_++;
         }
@@ -98,11 +98,11 @@ void Game::OnAnimationStep() {
 void Game::LaunchProjectiles() {
   for (int i = 0; i < opponent_.size(); i++) {
     if (opponent_[i]->LaunchProjectile() != nullptr) {
-      std::unique_ptr<OpponentProjectile> Cannon;
-      Cannon = std::make_unique<OpponentProjectile>();
-      Cannon->SetX(opponent_[i]->GetX());
-      Cannon->SetY(opponent_[i]->GetY());
-      opponent_pro.push_back(std::move(Cannon));
+      std::unique_ptr<OpponentProjectile> pro;
+      pro = std::make_unique<OpponentProjectile>();
+      pro->SetX(opponent_[i]->GetX());
+      pro->SetY(opponent_[i]->GetY());
+      opponent_pro.push_back(std::move(pro));
     }
   }
 }
@@ -114,14 +114,14 @@ void Game::OnMouseEvent(const graphics::MouseEvent &mouse) {
     player_.SetY(mouse.GetY() - 25);
   }
   if (mouse.GetMouseAction() == graphics::MouseAction::kPressed) {
-    std::unique_ptr<PlayerProjectile> Missle =
+    std::unique_ptr<PlayerProjectile> playpro =
         std::make_unique<PlayerProjectile>(mouse.GetX(), mouse.GetY() + 25);
-    player_pro.push_back(std::move(Missle));
+    player_pro.push_back(std::move(playpro));
   }
   if (mouse.GetMouseAction() == graphics::MouseAction::kDragged) {
-    std::unique_ptr<PlayerProjectile> Missle =
+    std::unique_ptr<PlayerProjectile> playpro =
         std::make_unique<PlayerProjectile>(mouse.GetX(), mouse.GetY() + 25);
-    player_pro.push_back(std::move(Missle));
+    player_pro.push_back(std::move(playpro));
   }
 }
 

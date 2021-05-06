@@ -21,7 +21,7 @@ class Opponent : public GameElement {
   std::unique_ptr<OpponentProjectile> LaunchProjectile();
 
  private:
-  int beam_firing_rate = 0;
+  int firing_rate = 0;
 };
 
 #endif
