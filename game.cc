@@ -54,7 +54,6 @@ void Game::MoveGameElements() {
 }
 
 void Game::FilterIntersections() {
-  // plane and UFO
   for (int j = 0; j < opponent_.size(); j++) {
     if (player_.IntersectsWith(opponent_[j].get()) == true) {
       player_.SetIsActive(false);
@@ -62,7 +61,6 @@ void Game::FilterIntersections() {
       Lost = true;
     }
   }
-  // Beam and Plane
   for (int i = 0; i < opponent_pro.size(); i++) {
     if (opponent_pro[i]->IntersectsWith(&player_) == true) {
       player_.SetIsActive(false);
@@ -70,7 +68,6 @@ void Game::FilterIntersections() {
       Lost = true;
     }
   }
-  // Bullet and UFO
   for (int a = 0; a < player_pro.size(); a++) {
     for (int b = 0; b < opponent_.size(); b++) {
       if (player_pro[a]->IntersectsWith(opponent_[b].get()) == true) {
